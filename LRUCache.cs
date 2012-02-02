@@ -33,8 +33,13 @@ namespace LRUCache
             // if the cache already contains the key
             if (valueByKey.ContainsKey(key))
             {
-                // then just update the corresponding value
+                // then update the corresponding value
                 valueByKey[key] = value;
+
+                // and set the key to be the most recently used one
+                var node = nodeByKey[key];
+                list.Remove(node);
+                list.AddFirst(node);
             }
             else
             {
