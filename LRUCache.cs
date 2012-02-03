@@ -62,11 +62,11 @@ namespace LRUCache
                     // remove the node from the nodeByKey hashtable
                     nodeByKey.Remove(list.Last.Value);
 
+                    // remove the corresponding entry from the cache
+                    valueByKey.Remove(list.Last.Value);
+
                     // then remove the least recently used element from the list
                     list.RemoveLast();
-
-                    // remove the corresponding entry from the cache
-                    valueByKey.Remove(key);
                 }
             }
         }
