@@ -93,8 +93,8 @@ namespace LRUCache
             }
             else
             {
-                // else return default value of the type TValue
-                return default(TValue);
+                // else throw the exception
+                throw new KeyNotFoundException();
             }
         }
 
